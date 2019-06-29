@@ -1,0 +1,36 @@
+
+  <div class="ban-sec-srch">
+    <div class="container-fluid">
+      <div class="row">
+          {{research_data.length}}{{select_item}}
+      <div [ngClass]="{'col-12':true, 'pad_twenty':true, 'col-sm-12':screen_width>=993, 'search_col':screen_width<993}">
+          <form class="search_col" [formGroup]="searchform" (ngSubmit)="searchInfo(searchform.value)">
+            <div class="form-row">
+            <div class="col-10 ban-sec-srch-lt pad_five">
+              <input id="search" type="text"  autocomplete="off" formControlName="search"  (keyup.arrowdown)="shiftFocusDown()" (keyup.arrowup)="shiftFocusUp()" class="form-control secchinput"  (keyup)="onKey($event)" placeholder="Search locations / packages">
+              <input formControlName="autoSelectEnter" type="hidden" class="form-control">
+              <div class=".pos_rel">
+              <div  clickOutside (clickOutside)="clickOutSide()" *ngIf="toggelesearchdata" class="searchautodroupdown">
+                  <div *ngIf="research_data[0] || search_data[0]">
+                    <ng-container *ngFor="let item3 of research_data;let i=index">
+                        <div *ngIf="item3.includes(typething) || typething=='' " attr.id="research{{i}}" [ngClass]="{'searchautodroupdowndataequal':true, 'searchautodroupdowndata1':select_item=='research'+i, 'searchautodroupdowndata':select_item!='research'+i}" (mouseover)="searchMouseHover(item3,'research'+i)">{{item3}}</div>
+                    </ng-container>
+                    <ng-container *ngFor="let item3 of search_data;let i=index">
+                        <div class="searchdatahead" *ngIf="i==0">Trending</div>
+                        <div *ngIf="item3.includes(typething) || typething=='' " attr.id="search_data{{i}}"  [ngClass]="{'searchautodroupdowndataequal':true, 'searchautodroupdowndata1':select_item=='search_data'+i, 'searchautodroupdowndata':select_item!='search_data'+i}" (mouseover)="searchMouseHover(item3,'search_data'+i)">{{item3}}</div>
+                    </ng-container>
+                  </div>
+              </div>
+              </div>
+            </div>
+            <div class="col ban-sec-srch-rt">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>				
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

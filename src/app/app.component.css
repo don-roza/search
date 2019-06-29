@@ -1,0 +1,44 @@
+.pad_twenty{
+    padding: 20px;
+  }
+
+  .ban-sec-srch .container-fluid .row .search_col
+{
+	max-width:700px;
+	margin: auto;
+}
+
+.searchdatahead{
+    background-color: #dae0e0;
+    color: #7d7777;
+    padding: 2px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+.searchautodroupdown{
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    background-color: #fefefe;
+    overflow-y: auto;
+    box-shadow: 2px 2px 2px 2px #0b0c0c33;
+  }
+
+  .searchautodroupdowndata{
+    padding: 5px;
+    font-family: sans-serif;
+    color: #4e4f50;
+  }
+
+  .searchautodroupdowndata1{
+    padding: 5px;
+    font-family: sans-serif;
+    background-color: #00a0af;
+    color: #fff;
+  }
+
+  .display_none{
+    display: none ;
+  }
